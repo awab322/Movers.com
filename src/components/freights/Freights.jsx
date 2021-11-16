@@ -1,22 +1,24 @@
 import React,{useState ,useEffect} from 'react'
 import FreightData from './FreightsData'
-import Aos from 'aos'
+import FreightsSkeleton from "./FreightsSkeleton";
 
+import Aos from 'aos'
 import {Typography}  from '@mui/material';
 
 const Freights = () => {
+    let[loading,setLoading] = useState(true)
+
+
 
     useEffect(() => {
-        Aos.init({ duration: 1500 });
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000);
     }, [])
 
 
 
     let[frData,setFrData]=useState(FreightData);
-
-    // useEffect(() => {
-    //     window.scrollTo(0, 0);
-    //   }, []);
 
     return (
         <>
@@ -33,6 +35,14 @@ const Freights = () => {
         <div className="container">
             <div className="row">
             {
+                loading ? 
+                <>
+                <FreightsSkeleton/>
+                <FreightsSkeleton/>
+                <FreightsSkeleton/>
+   
+                </> 
+                :
                 frData.map((dataFr)=>{
                     let{imageFr,titleFr,descriptionFr}=dataFr;
                     return(
@@ -51,6 +61,7 @@ const Freights = () => {
                     )
                 })
             }
+    
 
             </div>
         </div>
