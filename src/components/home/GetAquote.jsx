@@ -18,7 +18,7 @@ const GetAquote = () => {
     return (
         <>
  <div className="container" id="getQuote" style={{backgroundColor:"#f2f2f2" , marginTop:"40px" , marginBottom:"40px"  }}>
-    <form>
+
         <div className="row"  >
             <div className="col-md-12 text-center" style={{marginTop:"10px"}}>
             <Typography variant="h2">Get a Quote</Typography>
@@ -145,7 +145,7 @@ const GetAquote = () => {
             </div>
         </div>
 
-    </form>
+    
 
 
 </div>
